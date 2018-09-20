@@ -4,7 +4,7 @@ import redis
 
 old_cluster_url = 'localhost'
 old_cluster_port = 6379
-new_cluster_url = 'st1-hutaojie-cdp-1.prod.yiran.com'
+new_cluster_url = ''
 new_cluster_port = 19000
 # 仅有追评
 only_append_goods_label_key_pattern = 'review_hive:v3:goods_id_hive:{0}:label_id_hive:{1}'

@@ -5,9 +5,9 @@ import time
 def connect_review_db():
     return pymysql.connect(host='172.22.5.7',
                            port=3306,
-                           user='service_tmp_0906',
-                           password='passwdpasswd',
-                           database='pdd_review')
+                           user='',
+                           password='',
+                           database='')
 
 
 if __name__ == '__main__':
