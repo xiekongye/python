@@ -45,5 +45,22 @@ def create_shard_table():
     cnx.close()
 
 
+def update_table():
+    cnx = mysql.connector.connect(host='', port='', user='', password='')
+    cursor = cnx.cursor()
+
+    update_table_sql='''
+    alter table `person%s` add column pid bigint(20) not null null comment 'person id'; 
+    '''
+
+    for i in range(4):
+        cursor.execute('use {};'.format('test_shard{}'.format(i)))
+        for j in range(4):
+            try:
+                cursor.execute(update_table_sql, (j,))
+            except mysql.connector.Error as err:
+                print(err)
+
 if __name__ == '__main__':
-    create_shard_table()
+    # create_shard_table()
+    update_table()
